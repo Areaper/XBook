@@ -56,6 +56,23 @@ class pushNewBookViewController: UIViewController, BookTitleDelegate, PhotoPicke
         score.highlightImg = UIImage(named: "btn_star_evaluation_press")
         score.max_star = 5
         score.show_score = 5
+        
+        
+        // 注册通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pushBookNotification:", name: "pushBookNotification", object: nil)
+    }
+    
+    // pushBookNotification
+    func pushBookNotification(notification: NSNotification) {
+        let dict = notification.userInfo
+        if dict!["success"] as! String == "true" {
+            ProgressHUD.showSuccess("上传成功")
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        else {
+            ProgressHUD.showError("上传失败")
+        }
+        
     }
     
     // MARK: UITableView && UITableViewDataSource
@@ -77,9 +94,7 @@ class pushNewBookViewController: UIViewController, BookTitleDelegate, PhotoPicke
         if indexPath.row != 1 {
             cell.accessoryType = .DisclosureIndicator
         }
-        
-//        cell.editingAccessoryType = .DetailButton
-        
+                
         cell.textLabel?.text = self.titleArray[indexPath.row]
         cell.textLabel?.font = UIFont(name: MyFont, size: 15)
         cell.detailTextLabel?.font = UIFont(name: MyFont, size: 13)
@@ -94,13 +109,17 @@ class pushNewBookViewController: UIViewController, BookTitleDelegate, PhotoPicke
             break
         case 2:
             cell.detailTextLabel?.text = self.type + "->" + self.detailType
-
+        case 4:
+            cell.accessoryType = .None
+            let commentView = UITextView(frame: CGRectMake(4, 4, ScreenWidth - 8, 80))
+            commentView.text = self.Book_Description
+            commentView.font = UIFont(name: MyFont, size: 14)
+            cell.contentView.addSubview(commentView)
         
         default:
             break
         
         }
-        print(self.type)
 
         
         
@@ -110,6 +129,18 @@ class pushNewBookViewController: UIViewController, BookTitleDelegate, PhotoPicke
         
         return cell
         
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if showScore && indexPath.row > 5 {
+            return 88
+        }
+        else if self.showScore && indexPath.row > 4 {
+            return 88
+        }
+        else {
+            return 44
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -177,6 +208,8 @@ class pushNewBookViewController: UIViewController, BookTitleDelegate, PhotoPicke
     
     deinit {
         print("pushNewBookController realise")
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
     }
     
     // 选择分类
@@ -212,6 +245,16 @@ class pushNewBookViewController: UIViewController, BookTitleDelegate, PhotoPicke
         vc.callBack = {
             (description: String) -> Void in
             self.Book_Description = description
+            if self.titleArray.last == "" {
+                self.titleArray.removeLast()
+            }
+            if description != "" {
+                self.titleArray.append("")
+            }
+            self.tableView?.reloadData()
+            
+            
+            
         }
         self.presentViewController(vc, animated: true, completion: nil)
     }
@@ -241,6 +284,20 @@ class pushNewBookViewController: UIViewController, BookTitleDelegate, PhotoPicke
     
     func sure() {
         
+        let dict = [
+            "BookName": (self.bookTitleView?.BookName?.text)!,
+            "BookEditor":(self.bookTitleView?.BookEditor?.text)!,
+            "BookCover": (self.bookTitleView?.BookCover?.currentImage)!,
+            "title": self.BookTitle,
+            "score": String((self.score?.show_star)!),
+            "type": self.type,
+            "detailType": self.detailType,
+            "description": self.Book_Description
+        
+        ]
+        
+        pushBook.pushBookInBack(dict)
+        
     }
     
     func getImageFromPicker(image: UIImage) {
@@ -248,14 +305,6 @@ class pushNewBookViewController: UIViewController, BookTitleDelegate, PhotoPicke
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

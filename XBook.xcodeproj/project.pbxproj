@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		358399671CA3763900F59846 /* XKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 358399661CA3763900F59846 /* XKeyBoard.m */; };
+		3583996A1CA37B8B00F59846 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 358399691CA37B8B00F59846 /* Login.storyboard */; };
+		3583996C1CA37F4D00F59846 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3583996B1CA37F4D00F59846 /* LoginViewController.swift */; };
+		3583996E1CA37F5B00F59846 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3583996D1CA37F5B00F59846 /* RegisterViewController.swift */; };
+		358399771CA3864900F59846 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 358399741CA3864900F59846 /* ProgressHUD.bundle */; };
+		358399781CA3864900F59846 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 358399761CA3864900F59846 /* ProgressHUD.m */; };
+		3583997A1CA38D5000F59846 /* pushBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358399791CA38D5000F59846 /* pushBook.swift */; };
 		35A0EFDB1CA277CC00144282 /* pushNewBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A0EFDA1CA277CC00144282 /* pushNewBookViewController.swift */; };
 		35A0EFDE1CA2788800144282 /* generalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A0EFDD1CA2788800144282 /* generalFactory.swift */; };
 		35A0EFE01CA27B7C00144282 /* BookTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A0EFDF1CA27B7C00144282 /* BookTitleView.swift */; };
@@ -71,6 +78,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		358399651CA3763900F59846 /* XKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKeyBoard.h; sourceTree = "<group>"; };
+		358399661CA3763900F59846 /* XKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKeyBoard.m; sourceTree = "<group>"; };
+		358399691CA37B8B00F59846 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		3583996B1CA37F4D00F59846 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3583996D1CA37F5B00F59846 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		358399741CA3864900F59846 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		358399751CA3864900F59846 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		358399761CA3864900F59846 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		358399791CA38D5000F59846 /* pushBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pushBook.swift; sourceTree = "<group>"; };
 		35A0EFDA1CA277CC00144282 /* pushNewBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pushNewBookViewController.swift; sourceTree = "<group>"; };
 		35A0EFDD1CA2788800144282 /* generalFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = generalFactory.swift; sourceTree = "<group>"; };
 		35A0EFDF1CA27B7C00144282 /* BookTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTitleView.swift; sourceTree = "<group>"; };
@@ -161,6 +177,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		358399641CA3763900F59846 /* XKeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				358399651CA3763900F59846 /* XKeyBoard.h */,
+				358399661CA3763900F59846 /* XKeyBoard.m */,
+			);
+			path = XKeyBoard;
+			sourceTree = "<group>";
+		};
+		358399681CA37B7700F59846 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				358399691CA37B8B00F59846 /* Login.storyboard */,
+				3583996B1CA37F4D00F59846 /* LoginViewController.swift */,
+				3583996D1CA37F5B00F59846 /* RegisterViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		358399731CA3864900F59846 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				358399741CA3864900F59846 /* ProgressHUD.bundle */,
+				358399751CA3864900F59846 /* ProgressHUD.h */,
+				358399761CA3864900F59846 /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
 		35A0EFD11CA2478400144282 /* M */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +253,7 @@
 		35A0EFD81CA277BA00144282 /* M */ = {
 			isa = PBXGroup;
 			children = (
+				358399791CA38D5000F59846 /* pushBook.swift */,
 			);
 			name = M;
 			sourceTree = "<group>";
@@ -231,6 +277,8 @@
 		35A0EFE11CA27DC600144282 /* ThirdKit */ = {
 			isa = PBXGroup;
 			children = (
+				358399731CA3864900F59846 /* ProgressHUD */,
+				358399641CA3763900F59846 /* XKeyBoard */,
 				35A0F0431CA2C4F100144282 /* IGLDropDownMenu */,
 				35A0F01E1CA2C28200144282 /* AKSegmentedControl */,
 				35A0F0161CA2B8B100144282 /* LDXScore */,
@@ -364,6 +412,7 @@
 		35A19D8B1CA17B9700690ED3 /* XBook */ = {
 			isa = PBXGroup;
 			children = (
+				358399681CA37B7700F59846 /* Login */,
 				35A0EFDC1CA2786D00144282 /* factory */,
 				35A0EFD41CA24BCF00144282 /* pushNewBook */,
 				35A19DC11CA197B200690ED3 /* Resource */,
@@ -545,6 +594,7 @@
 				35A0F0361CA2C28200144282 /* segmented-bg-pressed-left@2x.png in Resources */,
 				35A0F03C1CA2C28200144282 /* segmented-separator@2x.png in Resources */,
 				35A0F0331CA2C28200144282 /* segmented-bg-pressed-center.png in Resources */,
+				3583996A1CA37B8B00F59846 /* Login.storyboard in Resources */,
 				35A0F03D1CA2C28200144282 /* settings-icon.png in Resources */,
 				35A0F03E1CA2C28200144282 /* settings-icon@2x.png in Resources */,
 				35A19DC31CA197F200690ED3 /* 隶变体.ttf in Resources */,
@@ -553,6 +603,7 @@
 				35A0EFFF1CA27E1800144282 /* ear1.png in Resources */,
 				35A19D941CA17B9700690ED3 /* Assets.xcassets in Resources */,
 				35A0F03B1CA2C28200144282 /* segmented-separator.png in Resources */,
+				358399771CA3864900F59846 /* ProgressHUD.bundle in Resources */,
 				35A0EFFC1CA27E1800144282 /* blank.png in Resources */,
 				35A0F0341CA2C28200144282 /* segmented-bg-pressed-center@2x.png in Resources */,
 				35A0EFFD1CA27E1800144282 /* Blank2.png in Resources */,
@@ -567,6 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35A0F0321CA2C28200144282 /* AKSegmentedControl.m in Sources */,
+				3583997A1CA38D5000F59846 /* pushBook.swift in Sources */,
 				35A19DAD1CA17F1C00690ED3 /* config.swift in Sources */,
 				35A19DB81CA1806600690ED3 /* pushViewController.swift in Sources */,
 				35A0EFE91CA27DF400144282 /* JVFloatLabeledTextField.m in Sources */,
@@ -577,9 +629,13 @@
 				35A0EFEB1CA27DF400144282 /* NSString+TextDirectionality.m in Sources */,
 				35A19DC01CA1808E00690ED3 /* moreViewController.swift in Sources */,
 				35A0F0481CA2C4F100144282 /* IGLDropDownItem.m in Sources */,
+				358399671CA3763900F59846 /* XKeyBoard.m in Sources */,
+				3583996C1CA37F4D00F59846 /* LoginViewController.swift in Sources */,
 				35A0F0091CA2872100144282 /* PhotoPickerViewController.swift in Sources */,
+				358399781CA3864900F59846 /* ProgressHUD.m in Sources */,
 				35A0F00F1CA2B3EB00144282 /* Push_TitleViewController.swift in Sources */,
 				35A0EFEA1CA27DF400144282 /* JVFloatLabeledTextView.m in Sources */,
+				3583996E1CA37F5B00F59846 /* RegisterViewController.swift in Sources */,
 				35A19DBA1CA1807600690ED3 /* searchViewController.swift in Sources */,
 				35A19DBC1CA1807E00690ED3 /* rankViewController.swift in Sources */,
 				35A0F0131CA2B40800144282 /* Push_DescriptionViewController.swift in Sources */,

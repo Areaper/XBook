@@ -14,15 +14,13 @@ class rankViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.whiteColor()
         
-        let label = UILabel(frame: CGRectMake(0, 0, 200, 40))
-        label.textAlignment = NSTextAlignment.Center
-        label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont(name: MyFont, size: 14)
-        label.center = view.center
-        label.text = "我是 leon , 哈哈哈"
-        label.textColor = UIColor.blackColor()
+        AVUser.logOut()
         
-        view.addSubview(label)
+        if AVUser.currentUser() == nil {
+            let story = UIStoryboard(name: "Login", bundle: nil)
+            let loginVC = story.instantiateViewControllerWithIdentifier("Login")
+            self.presentViewController(loginVC, animated: true, completion: nil)
+        }
 
         // Do any additional setup after loading the view.
     }

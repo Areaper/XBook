@@ -13,19 +13,23 @@ typealias Push_DescriptionControllerBlock = (description: String) -> Void
 
 class Push_DescriptionViewController: UIViewController {
     
-    var textView: JVFloatLabeledTextField!
+    var textView: JVFloatLabeledTextView!
     
     var callBack: Push_DescriptionControllerBlock?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.whiteColor()
-        textView = JVFloatLabeledTextField(frame: CGRectMake(8, 58, ScreenWidth - 16, ScreenHeight - 58 - 8))
+        textView = JVFloatLabeledTextView(frame: CGRectMake(8, 58, ScreenWidth - 16, ScreenHeight - 58 - 8))
         view.addSubview(textView)
         textView.placeholder = "        你可以在这里撰写详细的评价~~"
         textView.font = UIFont(name: MyFont, size: 17)
         view.tintColor = UIColor.grayColor()
         textView.becomeFirstResponder()
+        
+        XKeyBoard.registerKeyBoardHide(self)
+        XKeyBoard.registerKeyBoardShow(self)
+        
         
         
         
@@ -45,6 +49,18 @@ class Push_DescriptionViewController: UIViewController {
     func close() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    // 键盘遮挡
+    func keyboardWillHideNotification(notification: NSNotification) {
+        self.textView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        
+    }
+    func keyboardWillShowNotification(notification: NSNotification) {
+        let rect = XKeyBoard.returnKeyBoardWindow(notification)
+        self.textView?.contentInset = UIEdgeInsetsMake(0, 0, rect.size.height, 0)
+        
+    }
+    
+    
 
     /*
     // MARK: - Navigation

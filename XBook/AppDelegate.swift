@@ -15,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        // 设置 LeanCloud
+        AVOSCloud.setApplicationId("MYRK8Rbkn1Kk0VFEB1mNFett-gzGzoHsz", clientKey: "1C3PIXeiO4eyvv6bdbc2scAl")
+        
+        
         // Override point for customization after application launch.
         window = UIWindow(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
         
