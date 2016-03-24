@@ -1,25 +1,19 @@
 //
-//  rankViewController.swift
+//  BookDetailViewController.swift
 //  XBook
 //
-//  Created by leon on 16/3/22.
+//  Created by leon on 16/3/24.
 //  Copyright © 2016年 leon. All rights reserved.
 //
 
 import UIKit
 
-class rankViewController: UIViewController {
+class BookDetailViewController: UIViewController {
+    
+    var BookObject: AVObject?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.whiteColor()
-        
-        
-        if AVUser.currentUser() == nil {
-            let story = UIStoryboard(name: "Login", bundle: nil)
-            let loginVC = story.instantiateViewControllerWithIdentifier("Login")
-            self.presentViewController(loginVC, animated: true, completion: nil)
-        }
 
         // Do any additional setup after loading the view.
     }
